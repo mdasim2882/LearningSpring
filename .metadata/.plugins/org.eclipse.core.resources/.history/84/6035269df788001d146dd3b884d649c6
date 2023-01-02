@@ -1,0 +1,21 @@
+package com.springcore.javaconfig;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+
+
+public class DemoMain {
+
+	public static void main(String[] args) {
+
+		ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
+		Student student1 = context.getBean("student",Student.class);
+		Student student2 = context.getBean("student",Student.class);
+		System.out.println(student1.hashCode());
+		System.out.println(student2.hashCode());
+		student.study();
+
+	}
+
+}

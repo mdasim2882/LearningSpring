@@ -1,0 +1,10 @@
+package com.springcore.javaconfig;
+
+public class Teacher {
+
+	public void teaching() {
+		
+		System.out.println("I'm teaching");
+
+	}
+}
