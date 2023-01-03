@@ -1,5 +1,6 @@
 package com.spring.jdbc;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
@@ -37,8 +38,7 @@ public class App {
 //		Student student = new Student();
 //		student.setId(343);
 //		student.setName("Nitesh");
-//		student.setCity("Barabanki");
-//		
+//		student.setCity("Barabanki");		
 //		int rowsAffected = studentDao.insert(student);
 //		System.out.println("Rows affected = "+ rowsAffected);
 
@@ -53,13 +53,26 @@ public class App {
 //		System.out.println("Rows affected = "+ rowsAffected);
 
 		// DELETING...
+//		StudentDao studentDao = context.getBean("studentdao", StudentDao.class);
+		
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("Enter the student ID to be deleted: ");
+//		int id = scanner.nextInt();
+//		int rowsAffected = studentDao.delete(id);
+		
+		
+		// SELECT QUERY ...
+//		StudentDao studentDao = context.getBean("studentdao", StudentDao.class);
+//		
+//		System.out.println(studentDao.select(222));
+		
+		// GET ALL OBJECTS
 		StudentDao studentDao = context.getBean("studentdao", StudentDao.class);
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the student ID to be deleted: ");
-		int id = scanner.nextInt();
-		int rowsAffected = studentDao.delete(id);
-		System.out.println("Rows affected = " + rowsAffected);
+		List<Student> ls = studentDao.getAllObjects();
+		for( Student s : ls)
+			System.out.println(s);
+		
 
 	}
 }
